@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="827530df-a653-4296-800d-7abca76b2d06" name="更改" comment="Update">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/primogemstudio/chat/ChatClientMain.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/primogemstudio/chat/Main.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/primogemstudio/chat/TestPacket.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/primogemstudio/chat/data/PacketDataType.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/primogemstudio/chat/data/PacketInt.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/primogemstudio/chat/data/PacketString.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/primogemstudio/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/primogemstudio/chat/ChatServerMain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/primogemstudio/chat/ChatServerMain.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/primogemstudio/chat/data/PacketCombined.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/primogemstudio/chat/ChatClientMain.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/primogemstudio/chat/ChatClientMain.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/primogemstudio/chat/data/PacketInt.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/primogemstudio/chat/data/PacketInt.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/primogemstudio/chat/data/PacketString.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/primogemstudio/chat/data/PacketString.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +175,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728012191245</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="test packet">
+      <option name="closed" value="true" />
+      <created>1728282334317</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1728282334317</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

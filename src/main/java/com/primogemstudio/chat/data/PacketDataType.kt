@@ -8,7 +8,7 @@ interface PacketDataType<T: Any> {
     fun getSize(): Int
     fun getName(): String
 
-    fun serialize(data: T, out: DataOutput)
+    fun serialize(data: Any, out: DataOutput)
     fun deserialize(raw: DataInput): T
     fun printDebugMsg(raw: InputStream): T
 }

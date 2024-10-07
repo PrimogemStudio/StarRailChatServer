@@ -14,7 +14,7 @@ class PacketInt private constructor() : PacketDataType<Int> {
     override fun getSize(): Int = 4
     override fun getName(): String = "int"
     override fun deserialize(raw: DataInput): Int = raw.readInt()
-    override fun serialize(data: Int, out: DataOutput) { out.writeInt(data) }
+    override fun serialize(data: Any, out: DataOutput) { out.writeInt(data as Int) }
 
     @OptIn(ExperimentalStdlibApi::class)
     override fun printDebugMsg(raw: InputStream): Int {
@@ -22,6 +22,17 @@ class PacketInt private constructor() : PacketDataType<Int> {
 
         i.forEach {
             print(Ansi.ansi().fgBrightBlue().a("0x${it.toHexString()} ").reset())
+        }
+
+        return ByteBuffer.wrap(i).order(ByteOrder.BIG_ENDIAN).getInt();
+    }
+
+    @OptIn(ExperimentalStdlibApi::class)
+    fun printDebugOthMsg(raw: InputStream): Int {
+        val i = raw.readNBytes(4)
+
+        i.forEach {
+            print(Ansi.ansi().fgYellow().a("0x${it.toHexString()} ").reset())
         }
 
         return ByteBuffer.wrap(i).order(ByteOrder.BIG_ENDIAN).getInt();
