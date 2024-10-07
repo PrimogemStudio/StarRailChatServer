@@ -14,7 +14,8 @@ dependencies {
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0")
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.9.0"
+    implementation "org.fusesource.jansi:jansi:2.4.0"
 }
 
 test {
@@ -22,4 +23,22 @@ test {
 }
 kotlin {
     jvmToolchain(21)
+}
+
+jar {
+    archivesBaseName = 'StarRailChatServer'
+    archiveVersion = version
+    duplicatesStrategy = 'exclude'
+    manifest {
+        attributes(
+                "Manifest-Version": 1.0,
+                'Main-Class': 'com.primogemstudio.chat.Main'
+        )
+    }
+    //打包依赖包
+    from {
+        (configurations.runtimeClasspath).collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
 }
