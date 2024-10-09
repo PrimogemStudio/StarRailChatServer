@@ -1,29 +1,14 @@
 package com.primogemstudio.chat.data
 
-import org.fusesource.jansi.Ansi
 import java.io.DataInput
 import java.io.DataOutput
-import java.io.InputStream
-import java.nio.ByteBuffer
-import java.nio.ByteOrder
 
-class PacketInt32 private constructor() : PacketDataType<Int> {
+class PacketInt32 private constructor() : PacketDataType<Int32> {
     companion object {
         val INSTANCE = PacketInt32()
     }
-    override fun getSize(): Int = 4
+    override fun getSize(): Int32 = 4
     override fun getName(): String = "int"
-    override fun deserialize(raw: DataInput): Int = raw.readInt()
-    override fun serialize(data: Any, out: DataOutput) { out.writeInt(data as Int) }
-
-    @OptIn(ExperimentalStdlibApi::class)
-    fun printDebugOthMsg(raw: InputStream): Int {
-        val i = raw.readNBytes(4)
-
-        i.forEach {
-            print(Ansi.ansi().fgYellow().a("0x${it.toHexString()} ").reset())
-        }
-
-        return ByteBuffer.wrap(i).order(ByteOrder.BIG_ENDIAN).getInt();
-    }
+    override fun deserialize(raw: DataInput): Int32 = raw.readInt()
+    override fun serialize(data: Any, out: DataOutput) { out.writeInt(data as Int32) }
 }

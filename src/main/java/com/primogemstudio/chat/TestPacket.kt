@@ -1,5 +1,6 @@
 package com.primogemstudio.chat
 
+import com.primogemstudio.chat.data.Int32
 import com.primogemstudio.chat.data.PacketCombined
 import com.primogemstudio.chat.data.PacketInt32
 import com.primogemstudio.chat.data.PacketString
@@ -8,7 +9,7 @@ import java.io.DataOutputStream
 import java.net.Socket
 
 data class TestPacket(
-    val test1: Int,
+    val test1: Int32,
     val test2: String
 ) {
     fun send(s: Socket) {
@@ -20,7 +21,7 @@ data class TestPacket(
             val l = PacketCombined(listOf(PacketInt32.INSTANCE, PacketString.INSTANCE)).deserialize(DataInputStream(s.getInputStream()))
 
             return TestPacket(
-                l[0] as Int,
+                l[0] as Int32,
                 l[1] as String
             )
         }
