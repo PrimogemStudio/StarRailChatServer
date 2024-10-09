@@ -1,4 +1,4 @@
-package com.primogemstudio.chat.data
+package com.primogemstudio.chat.data.uni
 
 import java.io.DataInput
 import java.io.DataOutput

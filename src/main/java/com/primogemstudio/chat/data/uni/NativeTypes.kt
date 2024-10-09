@@ -1,4 +1,4 @@
-package com.primogemstudio.chat.data
+package com.primogemstudio.chat.data.uni
 
 typealias Int64 = Long
 typealias UInt64 = ULong

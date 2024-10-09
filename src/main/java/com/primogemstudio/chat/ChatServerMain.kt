@@ -1,5 +1,6 @@
 package com.primogemstudio.chat
 
+import com.primogemstudio.chat.data.wrap.PacketTest
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -9,11 +10,12 @@ import java.net.Socket
 class ChatServerMain {
     companion object {
         fun eventLoop(s: Socket) {
+            val pck = PacketTest()
             while (true) {
                 val r = s.getInputStream()
                 val a = r.available()
                 if (a != 0) {
-                    println(TestPacket.read(s))
+                    println(pck.read(s))
                 }
                 Thread.sleep(1000)
 

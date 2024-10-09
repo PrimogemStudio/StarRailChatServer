@@ -7,7 +7,7 @@ class Main {
             if (args[0] == "--client") {
                 ChatClientMain.main(args)
             }
-            else ChatServerMain.main(args)
+            else if (args[0] == "--server") ChatServerMain.main(args)
         }
     }
 }
