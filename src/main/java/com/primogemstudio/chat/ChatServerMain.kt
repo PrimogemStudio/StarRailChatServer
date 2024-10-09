@@ -8,16 +8,12 @@ import java.net.Socket
 
 class ChatServerMain {
     companion object {
-        @OptIn(ExperimentalStdlibApi::class)
         fun eventLoop(s: Socket) {
             while (true) {
                 val r = s.getInputStream()
                 val a = r.available()
                 if (a != 0) {
-                    println(a)
-                    val b = r.readNBytes(a)
-                    b.forEach { print("0x" + it.toHexString() + " "); }
-                    // println(TestPacket.read(s))
+                    println(TestPacket.read(s))
                 }
                 Thread.sleep(1000)
 

@@ -7,9 +7,9 @@ import java.io.InputStream
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 
-class PacketInt private constructor() : PacketDataType<Int> {
+class PacketInt32 private constructor() : PacketDataType<Int> {
     companion object {
-        val INSTANCE = PacketInt()
+        val INSTANCE = PacketInt32()
     }
     override fun getSize(): Int = 4
     override fun getName(): String = "int"

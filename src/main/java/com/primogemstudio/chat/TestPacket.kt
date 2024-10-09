@@ -1,7 +1,7 @@
 package com.primogemstudio.chat
 
 import com.primogemstudio.chat.data.PacketCombined
-import com.primogemstudio.chat.data.PacketInt
+import com.primogemstudio.chat.data.PacketInt32
 import com.primogemstudio.chat.data.PacketString
 import java.io.DataInputStream
 import java.io.DataOutputStream
@@ -12,12 +12,12 @@ data class TestPacket(
     val test2: String
 ) {
     fun send(s: Socket) {
-        PacketCombined(listOf(PacketInt.INSTANCE, PacketString.INSTANCE)).serialize(listOf(114514, "测试！abc"), DataOutputStream(s.getOutputStream()))
+        PacketCombined(listOf(PacketInt32.INSTANCE, PacketString.INSTANCE)).serialize(listOf(114514, "测试！abc"), DataOutputStream(s.getOutputStream()))
     }
 
     companion object {
         fun read(s: Socket): TestPacket {
-            val l = PacketCombined(listOf(PacketInt.INSTANCE, PacketString.INSTANCE)).deserialize(DataInputStream(s.getInputStream()))
+            val l = PacketCombined(listOf(PacketInt32.INSTANCE, PacketString.INSTANCE)).deserialize(DataInputStream(s.getInputStream()))
 
             return TestPacket(
                 l[0] as Int,
