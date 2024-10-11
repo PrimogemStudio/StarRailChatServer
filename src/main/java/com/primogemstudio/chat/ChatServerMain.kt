@@ -17,10 +17,12 @@ class ChatServerMain {
             val type = PacketCombined(listOf(PacketInt32.INSTANCE, PacketString.INSTANCE))
             while (true) {
                 val r = s.getInputStream()
-                val a = r.available()
-                if (a != 0) {
+                if (r.available() != 0) {
                     println(type.deserialize(DataInputStream(DebugInputStream(r))))
                 }
+                Thread.sleep(500)
+                println("Discovering!")
+                s.getOutputStream().write(byteArrayOf(0x11, 0x45, 0x14))
 
                 if (s.isClosed) {
                     println("Socket $s is closed")
